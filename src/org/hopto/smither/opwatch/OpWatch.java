@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.NotDirectoryException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -50,10 +51,7 @@ public class OpWatch extends JavaPlugin implements Listener{
         bot = OpBot.getInstance();
         Bukkit.getServer().getPluginManager().registerEvents(this , this);
         Bukkit.broadcastMessage("[§9OpWatch§r] Loaded");
-        File configFile = new File("plugins/"+this.getName()+"/config.yml");
-        if (!configFile.exists()){
-            saveDefaultConfig();
-        }
+        checkConfigExists();
         String verbReport="";
         switch(config.getString("playerVerb").substring(0, 1)){
             case "0":
@@ -126,6 +124,31 @@ public class OpWatch extends JavaPlugin implements Listener{
             outStream.flush();
             outStream.close();
         } catch (IOException e) {
+        }
+        checkConfigExists();
+    }
+    
+    private void checkConfigExists(){
+        File configDir=new File("plugins/"+this.getName());
+        if (!configDir.exists()){
+            boolean result=false;
+            System.out.println("[OpWatch] creating config Directory");
+            try{
+                configDir.mkdir();
+                result = true;
+            } 
+            catch(SecurityException se){
+                se.printStackTrace();
+            }        
+            if(result) {    
+                System.out.println("DIR created");  
+            }
+        } else if (configDir.isFile()){
+            try {
+                throw new NotDirectoryException("plugins/"+this.getName());
+            } catch (NotDirectoryException e) {
+                e.printStackTrace();
+            }
         }
         File configFile = new File("plugins/"+this.getName()+"/config.yml");
         if (!configFile.exists()){
