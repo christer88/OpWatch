@@ -31,7 +31,6 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class OpWatch extends JavaPlugin implements Listener{
-    private static OpWatch instance=null;
     private FileConfiguration config;
     private OpBot bot;
     private ServerIps players=new ServerIps();
@@ -39,15 +38,10 @@ public class OpWatch extends JavaPlugin implements Listener{
     private Map<Integer,Sign> signs;
     private Integer maxSignId;
     
-    public static OpWatch getInstance(){
-        return instance;
-    }
-    
     // Fired when plugin is first enabled
     @Override
     public void onEnable() {
         reload();
-        instance=this;
         bot = OpBot.getInstance();
         Bukkit.getServer().getPluginManager().registerEvents(this , this);
         Bukkit.broadcastMessage("[§9OpWatch§r] Loaded");

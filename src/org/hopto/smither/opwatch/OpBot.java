@@ -1,5 +1,6 @@
 package org.hopto.smither.opwatch;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.pircbotx.Channel;
 import org.pircbotx.Configuration;
@@ -28,7 +29,7 @@ class OpBot {
     }
     
     private OpBot() {                                   // Constructor, loads config
-        this.plugin=OpWatch.getInstance();
+        this.plugin=(OpWatch) Bukkit.getPluginManager().getPlugin("OpWatch");
         FileConfiguration config=plugin.returnConfig();
         channel=bot.getUserChannelDao().getChannel(config.getString("channel"));
         name=config.getString("botName");
