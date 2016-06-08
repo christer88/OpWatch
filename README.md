@@ -2,7 +2,7 @@
 Plugin for Op management of a spigot server via IRC. Allows sign checking, player relations, player ips, and a few other things.
 
 ###Install
-Simply download what is in /target/ and put into your spigot plugins folder in the layout shown below, edit the config and restart your server.
+Simply download the .jar that is in /target/ and put into your spigot plugins folder, restart your server, edit the config, and restart your server again.
 </br>
 /spigot/plugins/  
 &nbsp;&nbsp;&nbsp;&nbsp;|  
