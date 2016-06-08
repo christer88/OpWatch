@@ -1,6 +1,6 @@
 name: OpWatch
 main: OpWatch.OpWatch
-version: 1.3.12
+version: 1.4.1
 author: Callum Denison Smith
 date: 2016/04/06
 description: Checks many things in the game and console, reports them to an op irc channel
