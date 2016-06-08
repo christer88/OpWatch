@@ -1,5 +1,5 @@
 name: OpWatch
-main: OpWatch.OpWatch
+main: org.hopto.smither.opwatch.OpWatch
 version: 1.4.1
 author: Callum Denison Smith
 date: 2016/04/06
