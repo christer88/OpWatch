@@ -1,0 +1,17 @@
+# All Watchlists take file references
+playerWatchList: ""
+regexWatchList: ""
+
+# IRC details
+botName: PluginDev
+channel: 
+serverAddress:
+authMethod: 
+authPswd: 
+channelPass: 
+
+# Verbosity of bot	
+# 0=no reports, 1=report only watchlist events, 2=report all events
+# 1st digit=1st degree links, 2nd digit=2nd degre links
+playerVerb: 22
+signVerb: 2
