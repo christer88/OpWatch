@@ -50,6 +50,10 @@ public class OpWatch extends JavaPlugin implements Listener{
         bot = OpBot.getInstance();
         Bukkit.getServer().getPluginManager().registerEvents(this , this);
         Bukkit.broadcastMessage("[§9OpWatch§r] Loaded");
+        File configFile = new File("plugins/"+this.getName()+"/config.yml");
+        if (!configFile.exists()){
+            saveDefaultConfig();
+        }
         String verbReport="";
         switch(config.getString("playerVerb").substring(0, 1)){
             case "0":
