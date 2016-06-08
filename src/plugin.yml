@@ -2,7 +2,6 @@ name: OpWatch
 main: org.hopto.smither.opwatch.OpWatch
 version: "1.4.1"
 author: "Callum Denison Smith"
-date: "2016/04/06"
 description: "Checks many things in the game and console, reports them to an op irc channel"
 commands:
   opwatch:
@@ -15,4 +14,3 @@ permissions:
   OpWatch.Admin:
     description: "Allows control of the Op IRC Bot"
     default: op
-    author: "Callum Denison Smiths"
