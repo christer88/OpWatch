@@ -1,6 +1,7 @@
 classes/
 .project
 bin/
+build.xml
 .classpath
 .settings/
 .externalToolBuilders/
